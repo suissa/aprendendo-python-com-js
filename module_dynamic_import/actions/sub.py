@@ -1,0 +1,1 @@
+sub = lambda x, y: x - y
