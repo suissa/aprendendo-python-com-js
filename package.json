@@ -1,5 +1,17 @@
 {
   "dependencies": {
-    "axios": "^0.24.0"
-  }
+    "axios": "^0.24.0",
+    "node-fecth": "^0.0.1-security",
+    "node-fetch": "^3.3.2"
+  },
+  "name": "aprendendo-python-via",
+  "description": "Provavelmente isso não ajude ninguém, mas achei interessante escrever algumas correlações simples q fiz, pois estou aprendendo Python me baseando no que quero fazer, pois já fiz tudo em JS.",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }
