@@ -1,13 +1,13 @@
-import fetch from 'node-fetch';
+import fetch from "node-fetch";
 
 async function getTop10Coins() {
-    const url = 'https://api.coingecko.com/api/v3/coins/markets';
+    const url = "https://api.coingecko.com/api/v3/coins/markets";
     const params = new URLSearchParams({
-        vs_currency: 'usd',
-        order: 'market_cap_desc',
-        per_page: '10',
-        page: '1',
-        sparkline: 'false',
+        vs_currency: "usd",
+        order: "market_cap_desc",
+        per_page: "10",
+        page: "1",
+        sparkline: "false",
     });
     const response = await fetch(`${url}?${params}`);
 
@@ -15,13 +15,13 @@ async function getTop10Coins() {
         const data = await response.json();
         return data;
     } else {
-        console.log('Falha ao obter dados da API do CoinGecko:', response.statusText);
+        console.log("Falha ao obter dados da API do CoinGecko:", response.statusText);
         return null;
     }
 }
 
 async function getDolarRealExchangeRate() {
-    const url = 'https://api.exchangerate-api.com/v4/latest/USD';
+    const url = "https://api.exchangerate-api.com/v4/latest/USD";
     const response = await fetch(url);
 
     if (response.ok) {
@@ -29,7 +29,7 @@ async function getDolarRealExchangeRate() {
         const usdToBrlRate = data.rates.BRL;
         return usdToBrlRate;
     } else {
-        console.log('Falha ao obter dados da exchangerate-api:', response.statusText);
+        console.log("Falha ao obter dados da exchangerate-api:", response.statusText);
         return null;
     }
 }
@@ -49,7 +49,7 @@ async function main() {
             console.log(`Preço de ${coin.name} em BRL: ${coin.priceBrl}`);
         });
     } else {
-        console.log('Não foi possível obter os dados necessários.');
+        console.log("Não foi possível obter os dados necessários.");
     }
 }
 

@@ -8,7 +8,7 @@ actions = {
 calc = (op, values) => actions[op](...values)
 
 values = [10, 2]
-ops = ['add', 'mul']
+ops = ["add", "mul"]
 
 console.log(
   ops.map(op => actions[op](...values))

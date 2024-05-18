@@ -1,4 +1,4 @@
-const fetch = require('node-fetch');
+import fetch from "node-fetch";
 
 const url_base = "https://api.binance.com/api/v3";
 const url_action = "klines";
@@ -14,5 +14,5 @@ fetch(url)
     console.log(data);
   })
   .catch(error => {
-    console.error('Erro ao buscar dados da API Binance:', error);
+    console.error("Erro ao buscar dados da API Binance:", error);
   });

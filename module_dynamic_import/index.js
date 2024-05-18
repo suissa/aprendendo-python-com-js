@@ -1,13 +1,13 @@
-fs = require('fs')
-testFolder = './actions/'
+fs = require("fs")
+testFolder = "./actions/"
 
 actions = {}
-command = 'add'
+command = "add"
 
 fs.readdirSync(testFolder).forEach(file => {
   console.log(file)
-  if (file.endsWith('.js')) {
-    name = file.split('.js')[0]
+  if (file.endsWith(".js")) {
+    name = file.split(".js")[0]
     console.log(file, name)
 
     actions[name] = require(testFolder+file)

@@ -2,7 +2,7 @@ import importlib
 import importlib.util
 
 actions = {}
-module_dir = 'actions'
+module_dir = "actions"
 module_names = ["add", "sub2", "sub"]
 
 for module in module_names:

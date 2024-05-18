@@ -1,12 +1,12 @@
-const fs = require('fs');
-const { createCanvas } = require('canvas');
-const csv = require('csv-parser');
+const fs = require("fs");
+const { createCanvas } = require("canvas");
+const csv = require("csv-parser");
 
 // Configurações do gráfico
 const width = 800;
 const height = 600;
 const canvas = createCanvas(width, height);
-const ctx = canvas.getContext('2d');
+const ctx = canvas.getContext("2d");
 
 // Função para desenhar o gráfico
 function drawChart(dates, sales) {
@@ -14,8 +14,8 @@ function drawChart(dates, sales) {
   ctx.clearRect(0, 0, width, height);
 
   // Título do gráfico
-  ctx.font = '20px Arial';
-  ctx.fillText('Sales Data', width / 2 - 50, 30);
+  ctx.font = "20px Arial";
+  ctx.fillText("Sales Data", width / 2 - 50, 30);
 
   // Eixos
   ctx.beginPath();
@@ -41,7 +41,7 @@ function drawChart(dates, sales) {
   ctx.stroke();
 
   // Desenhar labels nos eixos
-  ctx.font = '10px Arial';
+  ctx.font = "10px Arial";
   dates.forEach((date, index) => {
     const x = 50 + xStep * index;
     ctx.fillText(date, x - 15, height - 30);
@@ -53,17 +53,17 @@ function drawChart(dates, sales) {
   });
 
   // Salvar o canvas como imagem
-  const buffer = canvas.toBuffer('image/png');
-  fs.writeFileSync('./sales_data_chart.png', buffer);
-  console.log('Gráfico salvo como sales_data_chart.png');
+  const buffer = canvas.toBuffer("image/png");
+  fs.writeFileSync("./sales_data_chart.png", buffer);
+  console.log("Gráfico salvo como sales_data_chart.png");
 }
 
 // Ler o arquivo CSV e desenhar o gráfico
 const results = [];
-fs.createReadStream('./project_plot/sales_data.csv')
+fs.createReadStream("./project_plot/sales_data.csv")
   .pipe(csv())
-  .on('data', (data) => results.push(data))
-  .on('end', () => {
+  .on("data", (data) => results.push(data))
+  .on("end", () => {
     console.log(results);
 
     const dates = results.map(row => row.Date);

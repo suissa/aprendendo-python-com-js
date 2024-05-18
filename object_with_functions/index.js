@@ -8,4 +8,4 @@ actions = {
 calc = (op, values) => actions[op](...values)
 
 values = [10, 2]
-console.log(calc('add', values))
+console.log(calc("add", values))

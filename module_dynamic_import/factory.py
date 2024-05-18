@@ -16,7 +16,7 @@ def createObj(module_names, modules_dir):
   
   return actions
 
-modules_dir = 'actions'
+modules_dir = "actions"
 module_names = ["add", "ARRIBA", "mul"]
 
 Calculadora = createObj(module_names, modules_dir)

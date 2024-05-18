@@ -12,30 +12,30 @@ print(ex01) #100
 
 # ex02
 getName = lambda person: person["name"]
-print(getName({ "name": 'Buckethead' }))
-# 'Buckethead'
+print(getName({ "name": "Buckethead" }))
+# "Buckethead"
 
 uppercase = lambda string: string.upper()
-print(uppercase('Buckethead'))
-# 'BUCKETHEAD'
+print(uppercase("Buckethead"))
+# "BUCKETHEAD"
 
 get6Characters = lambda string: string[0:6]
-print(get6Characters('Buckethead'))
-# 'Bucket'
+print(get6Characters("Buckethead"))
+# "Bucket"
 
 reverse = lambda string: string[::-1]
-print(reverse('Buckethead'))
-# 'daehtekcuB'
+print(reverse("Buckethead"))
+# "daehtekcuB"
 
-ex02 = reverse(get6Characters(uppercase(getName({ "name": 'Buckethead' }))))
+ex02 = reverse(get6Characters(uppercase(getName({ "name": "Buckethead" }))))
 print(ex02)
-# 'TEKCUB'
+# "TEKCUB"
 
 ex03 = pipe(
   getName,
   uppercase,
   get6Characters,
   reverse
-)({ "name": 'Buckethead' })
+)({ "name": "Buckethead" })
 
 print(ex03)
