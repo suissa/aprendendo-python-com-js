@@ -1,7 +1,7 @@
-import glob
 import os
-
 
 x = os.listdir("./")
 
-print(x)
+print("Arquivos no diretório:")
+for file in x:
+    print(file)
