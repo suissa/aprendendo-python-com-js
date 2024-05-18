@@ -5,5 +5,5 @@ times10 = lambda x: x * 10
 
 runCompose = lambda x: compose( add7, times10 )( x )
 
-print( runCompose( 5 ) ) # 57 = 5 * 10 = 50 + 7
+print( runCompose( 5 ) ) # 5 * 10 = 50 + 7 = 57
 
