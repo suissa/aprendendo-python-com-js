@@ -1,17 +1,18 @@
-// preciso instalar localmente npm i axios
-axios = require('axios')
+const fetch = require('node-fetch');
 
-url = "https://api.binance.com/api/v3/klines?symbol=BTCUSDT&interval=5m&limit=2"
+const url_base = "https://api.binance.com/api/v3";
+const url_action = "klines";
+const url_symbol = "BTCUSDT";
+const url_interval = "5m";
+const url_limit = "2";
+const url_params = `${url_action}?symbol=${url_symbol}&interval=${url_interval}&limit=${url_limit}`;
+const url = `${url_base}/${url_params}`;
 
-// forma async
-axios.get(url).then((result) => console.log(result.data)).catch(console.error)
-
-// forma sync
-;(async () => {
-  try {
-    result = await axios.get(url)
-    console.log(result.data)
-  } catch (error) {
-    console.error(error)
-  }
-})()
+fetch(url)
+  .then(response => response.json())
+  .then(data => {
+    console.log(data);
+  })
+  .catch(error => {
+    console.error('Erro ao buscar dados da API Binance:', error);
+  });
