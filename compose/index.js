@@ -5,5 +5,5 @@ times10 = ( x ) => x * 10
 
 runCompose = ( x ) => compose( add7, times10 )( x )
 
-console.log( runCompose( 5 ) ) // 57 = 5 * 10 = 50 + 7
+console.log( runCompose( 5 ) ) // 5 * 10 = 50 + 7 = 57
 
