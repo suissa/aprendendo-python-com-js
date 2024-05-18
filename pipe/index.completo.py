@@ -7,8 +7,8 @@ add7 = lambda x: x + 7
 times10 = lambda x: x * 10
 minus20 =lambda x: x - 20
 
-#ex01 = pipe([add7, times10, minus20], 5)
-#print(ex01) #100
+ex01 = pipe([add7, times10, minus20], 5)
+print(ex01) #100
 
 # ex02
 getName = lambda person: person["name"]
