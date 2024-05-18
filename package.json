@@ -1,6 +1,8 @@
 {
   "dependencies": {
     "axios": "^0.24.0",
+    "canvas": "^2.11.2",
+    "csv-parser": "^3.0.0",
     "node-fecth": "^0.0.1-security",
     "node-fetch": "^3.3.2"
   },
