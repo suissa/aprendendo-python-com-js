@@ -22,7 +22,7 @@ def fn():
   global counter
   print(counter)
 
-  if (counter > 2): exit()
+  if (counter >= 2): exit()
   
   counter+=1
   
